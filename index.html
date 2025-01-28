@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walentynka</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    h1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 2px 2px 5px black;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn {
+      background-color: #ff0077;
+      color: white;
+    }
+
+    .yes-btn:hover {
+      background-color: #ff4e8f;
+    }
+
+    .no-btn {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .no-btn:hover {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pierwszy ekran -->
+  <div id="screen1" class="container visible">
+    <div class="background" style="background-image: url('img1.jpg');"></div>
+    <h1>Zostaniesz moją Walentynką? 💖</h1>
+    <div class="buttons">
+      <button class="btn yes-btn" onclick="showSecondScreen()">Tak 🥰</button>
+      <button class="btn no-btn" onclick="stayOnFirstScreen()">Nie 😓</button>
+    </div>
+  </div>
+
+  <!-- Drugi ekran -->
+  <div id="screen2" class="container">
+    <div class="background" style="background-image: url('img2.jpg');"></div>
+    <h1>Dziękuję, Kocham Cię!!! 😻</h1>
+  </div>
+
+  <script>
+    function showSecondScreen() {
+      document.getElementById('screen1').classList.remove('visible');
+      document.getElementById('screen2').classList.add('visible');
+    }
+
+    function stayOnFirstScreen() {
+      alert("Zostaje tylko opcja 'Tak'! 💕");
+    }
+  </script>
+</body>
+</html>
